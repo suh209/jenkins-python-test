@@ -13,7 +13,7 @@ pipeline {
     }
 
     environment {
-      PATH="/opt/miniconda3/miniconda/bin:$PATH"
+      PATH="/var/jenkins_home/miniconda3/bin:$PATH"
     }
 
     stages {
@@ -28,10 +28,7 @@ pipeline {
             steps {
                 echo "Building virtualenv"
 //                sh  ''' conda create --yes -n ${BUILD_TAG} python
-                sh  ''' ls -l /opt/miniconda3/miniconda
-                        echo $PATH
-                        echo $PWD
-                        conda create --yes -n ${BUILD_TAG} python=3.6.9
+                sh  ''' conda create --yes -n ${BUILD_TAG} python=3.6.9
                         source activate ${BUILD_TAG}
                         pip install -r requirements/dev.txt
                     '''
