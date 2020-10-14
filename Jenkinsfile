@@ -30,6 +30,7 @@ pipeline {
 //                sh  ''' conda create --yes -n ${BUILD_TAG} python
                 sh  ''' ls -l /opt
                         echo $PATH
+                        echo $PWD
                         conda create --yes -n ${BUILD_TAG} python=3.6.9
                         source activate ${BUILD_TAG}
                         pip install -r requirements/dev.txt
