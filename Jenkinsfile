@@ -122,15 +122,7 @@ pipeline {
                 }
             }
         }
-
-        stage("Deploy to PyPI") {
-            }
-            steps {
-                sh "twine upload dist/*"
-            }
-        }
-    }
-
+      }
     post {
         always {
             sh 'conda remove --yes -n ${BUILD_TAG} --all'
