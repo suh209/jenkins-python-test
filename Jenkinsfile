@@ -13,7 +13,7 @@ pipeline {
     }
 
     environment {
-      PATH="opt/miniconda3/bin:$PATH"
+      PATH="/opt/miniconda3/bin:$PATH"
     }
 
     stages {
