@@ -29,10 +29,10 @@ pipeline {
                 echo "Building virtualenv"
 //                sh  ''' conda create --yes -n ${BUILD_TAG} python
 //                sh  ''' conda create --yes -n ${BUILD_TAG} python=3.6.9
-                 conda create --yes -p ../.conda python=3.6.9
-                 source activate ../.conda
-                 pip install -r requirements/dev.txt
-                 '''
+                 sh ''' conda create --yes -p ../.conda python=3.6.9
+                        source activate ../.conda
+                        pip install -r requirements/dev.txt
+                    '''
             }
         }
 
